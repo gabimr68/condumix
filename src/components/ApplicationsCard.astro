@@ -1,0 +1,23 @@
+---
+interface Props {
+  icon: string;   
+  title: string;
+  description: string;
+  applications: string[]
+}
+
+const { icon, title, description, applications } = Astro.props;
+---
+
+<div class="flex flex-col gap-2 w-[280px] bg-white p-6 items-center justify-center shadow-md border border-gray-500 rounded-[9px]">
+    <img src={icon} alt={title} class="w-[50px] h-[50px] object-contain mb-2" />
+    <div class="flex flex-col items-center justify-center gap-4">
+    <h3 class="text-[#0A2540] text-2xl font-cabin text-center">{title}</h3>
+    <p class="text-[#7B7B7B] text-base font-cabin text-center">{description}</p>
+    <p class="text-[#0A2540] text-lg font-cabin">Aplicações</p>
+    <div class="flex flex-col">
+        {applications.map((idx)=><p class="text-[#0A2540] text-base font-cabin">•  {idx}</p>)}
+    </div>
+   </div>
+  </div>
+  

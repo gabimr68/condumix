@@ -1,48 +1,225 @@
 ---
+import ApplicationsCard from '../components/ApplicationsCard.astro';
 import BaseHead from '../components/BaseHead.astro';
+import DeliveryTypeCard from '../components/DeliveryTypeCard.astro';
+import DifferentialCard from '../components/DifferentialCard.astro';
+import FeatureCard from '../components/FeatureCard.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import ProductCard from '../components/ProductCard.astro';
+import '../styles/global.css';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="Condumix" description="Cabos e fios elétricos" />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section id="inicio" class="bg-[#0A2540] py-20 lg:pt-40">
+				<div class="flex flex-col max-w-7xl mx-auto px-10 lg:px-6 lg:flex-row items-center gap-10">
+				  <div class="flex text-white flex-col justify-center items-center lg:items-start">
+					<h1 class="text-4xl md:text-6xl lg:text-6xl font-bold mb-10 font-cabin">CONDUMIX</h1>
+					<p class="text-yellow-400 text-center mb-8 text-xl md:text-2xl font-cabin">
+					  Comércio de fios e cabos elétricos
+					</p>
+					<p class="mb-10 font-cabin text-base lg:text-xl md:text-xl text-center lg:text-start">
+						Nosso objetivo é sempre a máxima satisfação de nossos clientes, fornecendo 
+						materiais de acordo com as especificações técnicas, visando o perfeito atendimento a cada necessidade.						
+					</p>
+			  
+					<div class="flex gap-4">
+						<a
+						href="https://wa.me/5511917175911?text=Olá!%20Gostaria%20de%20mais%20informações."
+						target="_blank"
+						rel="noopener noreferrer"
+						class="hover:text-yellow-400 text-center hover:bg-transparent hover:border-yellow-400 hover:border bg-yellow-400 text-black px-4 py-1 md:px-6 md:py-3 rounded font-cabin text-xs md:text-lg"
+					  >
+						Fale Conosco no WhatsApp
+					  </a>
+					  <a href="#lista-produtos" class="hover:bg-yellow-400 text-center hover:text-black border border-yellow-400 text-yellow-400 px-4 py-1 lg:px-6 lg:py-3 md:px-6 md:py-3 rounded font-cabin text-xs md:text-lg">
+						Ver Produtos
+					  </a>
+					</div>
+				  </div>
+			  
+				  <img  src="src/assets/image3.png"  class="shadow-lg w-[740px] m-0" />
+				</div>
+				<div class="flex px-10 w-full pt-12 md:pt-16 justify-end">
+					<a
+					  href="https://wa.me/5511917175911?text=Olá!%20Gostaria%20de%20mais%20informações."
+					  target="_blank"
+					  rel="noopener noreferrer"
+					>
+					  <img
+						src="src/assets/whatsapp.png"
+						alt="WhatsApp"
+						class="shadow-lg w-[40px]  md:w-[50px] cursor-pointer"
+					  />
+					</a>
+				  </div>
+				
+			  </section>
+
+			  <section id="historia" class="bg-[#F5F5F5] py-16 md:py-20 lg:py-28">
+				<div class="max-w-7xl mx-auto px-10 lg:px-6 grid lg:grid-cols-2 gap-10">
+				  <div class="flex gap-9 flex-col">
+					<h2 class="text-4xl text-[#0A2540] font-semibold mb-4 font-cabin">Nossa História</h2>
+					<p class="text-[#7B7B7B] text-xl font-cabin">Há mais de 30 anos, a Condumix se estabeleceu como referência no fornecimento de cabos e soluções elétricas para todo o Brasil. Nossa trajetória é marcada pela constante busca por inovação, qualidade e excelência no atendimento.</p>
+					<p class="text-[#7B7B7B] text-xl font-cabin">Ao longo dos anos, construímos relacionamentos sólidos com nossos clientes, baseados na confiança, experiência técnica e comprometimento com resultados. Cada projeto é uma oportunidade de demonstrar nossa experiência e dedicação.</p>
+					<div class="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-4">
+						<FeatureCard
+						icon="src/assets/quality.png"
+						title="Qualidade"
+						description="Produtos certificados INMETRO"
+						/>
+						<FeatureCard
+						icon="src/assets/trust.png"
+						title="Confiança"
+						description="Milhares de clientes satisfeitos"
+						/>
+						<FeatureCard
+						icon="/src/assets/precision.png"
+						title="Precisão"
+						description="Soluções técnicas personalizadas"
+						/>
+					</div>
+				  </div>
+				  <div class="flex flex-col gap-5">
+					<img src="src/assets/people.png" class="shadow-lg" />
+					<img src="src/assets/image2.png" class="shadow-lg" />
+				  </div>
+				</div>
+			  </section>
+			  
+			  <section id="produtos" class="bg-white py-16">
+				<div class="flex flex-col items-center justify-center gap-8 px-10">
+					<div class="flex flex-col  items-center justify-center gap-4">
+						<h1 class="text-4xl text-[#0A2540] font-semibold font-cabin text-center">Produtos e Aplicações</h1>
+						<p class="text-[#7B7B7B] font-semibold text-xl font-cabin lg:w-3/5 text-center">Oferecemos uma ampla gama de cabos elétricos para diversas aplicações, sempre 
+							priorizando qualidade, segurança e eficiência energética.</p>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
+						<ApplicationsCard 
+						icon="/src/assets/ray.png"
+						title="Cabos de Energia"
+						description="Transmissão  e distribuição de energia elétrica em alta e baixa tensão"
+						applications={["Redes de distribuição","Subestações", "Concessionárias"]}
+						/>
+						<ApplicationsCard 
+						icon="/src/assets/industrial.png"
+						title="Cabos para uso Industrial"
+						description="Soluções para indústrias pesadas, máquinas e equipamentos de alta potência"
+						applications={["Alimentação de motores","Painéis elétricos", "Automação industrial"]}
+						/>
+						<ApplicationsCard 
+						icon="/src/assets/building.png"
+						title="Cabos para uso Predial"
+						description="Instalações elétricas em ambientes residenciais, comerciais e institucionais"
+						applications={["Instalações residenciais","Edifícios comerciais", "Hospitais e escolas"]}
+						/>
+						<ApplicationsCard 
+						icon="/src/assets/wifi.png"
+						title="Cabos para Telecomunicação"
+						description="Comunicação de dados, telefonia e redes de alta velocidade"
+						applications={["Redes corporativas","Data centers", "Provedores de internet"]}
+						/>
+					</div>
+				</div>
+			  </section>
+
+			  <section id="lista-produtos" class="bg-[#F5F5F5] py-16">
+				<div class="flex flex-col items-center justify-center gap-10">
+					<h1 class="text-4xl font-bold text-[#0A2540] font-cabin">Nossos Produtos</h1>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">
+						<ProductCard image='/src/assets/prod1.png' title='Cabo de cobre flexível PVC 750 V'/>
+						<ProductCard image='/src/assets/prod2.png' title='Cabo de cobre flexível HEPR/PVC 0,6/1KV'/>
+						<ProductCard image='/src/assets/prod3.png' title='Cabo de controle flexível'/>
+						<ProductCard image='/src/assets/prod4.png' title='Cabo de comando blindado em fita de poliéster aluminizado'/>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">
+						<ProductCard image='/src/assets/prod5.png' title='Cabo de controle blindado em fita de cobre'/>
+						<ProductCard image='/src/assets/prod6.png' title='Cabo de controle blindado em malha de cobre'/>
+						<ProductCard image='/src/assets/prod7.png' title='Cabo de média tensão'/>
+						<ProductCard image='/src/assets/prod8.png' title='Cabo para inversor de frequência'/>
+					</div>
+					<div class="flex flex-col md:flex-row gap-6 items-center justify-center">
+						<ProductCard image='/src/assets/prod9.png' title='Cabos de cobre flexível PVC 750 V 105ºC'/>
+						<ProductCard image='/src/assets/prod10.png' title='Cabo de cobre em silicone para altas temperaturas'/>
+					</div>
+					</div>
+					
+				</div>
+			  </section>
+
+			  <section id="diferenciais" class="bg-white py-16">
+				<div class="flex flex-col px-10 items-center justify-center gap-10">
+					<div class="flex flex-col items-center justify-center gap-4">
+						<h1 class="text-4xl font-bold text-[#0A2540] font-cabin text-center">Nossos Diferenciais</h1>
+						<p class="text-[#7B7B7B] font-semibold text-xl font-cabin text-center">O que nos torna a escolha certa para as suas necessidades em cabos e soluções elétricas</p>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+						<DifferentialCard icon="/src/assets/icon1.png"
+						title="30+ Anos de Experiência"
+						description="Três décadas de experiência técnica e conhecimento do mercado elétrico brasileiro, garantindo soluções confiáveis e eficientes."/>
+						<DifferentialCard icon="/src/assets/icon2.png"
+						title="Atendimento Direto via WhatsApp"
+						description="Comunicação rápida e eficiente com nossa equipe técnica. Tire dúvidas, solicite orçamentos e acompanhe pedidos em tempo real."/>
+						<DifferentialCard icon="/src/assets/icon3.png"
+						title="Confiabilidade Comprovada"
+						description="Milhares de projetos realizados com sucesso em todo o Brasil. Nossa reputação é construída na qualidade e pontualidade."/>
+						<DifferentialCard icon="/src/assets/icon4.png"
+						title="Qualidade e Diversidade"
+						description="Amplo portfólio de produtos de alta qualidade, atendendo desde pequenas instalações até grandes projetos industriais."/>
+					</div>
+				
+				</div>
+				</section>
+
+				<section id="entregas" class="bg-[#FED700] py-16">
+					<div class="flex flex-col px-10 items-center justify-center gap-10">
+						<h1 class="text-4xl text-center font-bold text-[#0A2540] font-cabin">Entregamos em todo o Brasil</h1>
+						<p class="text-[#0A2540] text-xl font-cabin text-center">Cobertura nacional com logística especializada e atendimento técnico</p>
+						<div class="flex flex-col lg:flex-row gap-8 items-center">
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+								<DeliveryTypeCard
+								icon="/src/assets/Vector.png"
+								title="Cobertura Nacional"
+								description="Atendemos todos os estados brasileiros com logística eficiente"
+								isBig={true}/>
+								<DeliveryTypeCard
+								icon="/src/assets/Vector-2.png"
+								title="Entrega Garantida"
+								description="Transporte seguro e pontual para seus projetos"
+								isBig={true}/>
+							</div>
+
+							<DeliveryTypeCard
+							icon="/src/assets/Vector-3.png"
+							title="Mais de 30 Anos"
+							description="Experiência comprovada no mercado elétrico"
+							isBig={true}/>
+						</div>
+
+						<div class="flex flex-col md:flex-row gap-6">
+							<DeliveryTypeCard
+							number='7.500+'
+							description="Clientes Atendidos"
+							isBig={false}/>
+							<DeliveryTypeCard
+							number='27'
+							description="Estados"
+							isBig={false}/>
+							<DeliveryTypeCard
+							number='10.000+'
+							description="Projetos"
+							isBig={false}/>
+						</div>
+					</div>
+				</section>
+			  
 		</main>
 		<Footer />
 	</body>

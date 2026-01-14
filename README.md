@@ -1,62 +1,108 @@
-# Astro Starter Kit: Blog
+CONDUMIX — Institutional Website
 
-```sh
-npm create astro@latest -- --template blog
-```
+This repository contains the institutional website developed for CONDUMIX, a Brazilian company with over 30 years of experience in the electrical sector, specializing in the distribution of electrical wires and cables.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The project was built using Astro, focusing on high performance, SEO best practices, and a clean, scalable architecture suitable for a corporate website.
 
-Features:
+--------------------------------------------------
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+ABOUT CONDUMIX
 
-## 🚀 Project Structure
+Condumix has been operating for more than three decades, providing electrical cables and solutions that strictly follow technical specifications, always aiming for maximum customer satisfaction.
 
-Inside of your Astro project, you'll see the following folders and files:
+This website was created to:
+- Strengthen the company’s digital presence
+- Present its history, values, and expertise
+- Support institutional and commercial communication
+- Deliver a fast, reliable, and modern user experience
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+--------------------------------------------------
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+TECH STACK
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Astro (Static Site Generator)
+- JavaScript / TypeScript
+- Markdown & MDX
+- SEO-first architecture
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+--------------------------------------------------
 
-Any static assets, like images, can be placed in the `public/` directory.
+FEATURES
 
-## 🧞 Commands
+- Optimized performance (Lighthouse 100/100)
+- SEO-friendly structure with canonical URLs and OpenGraph metadata
+- Clean and maintainable project structure
+- Markdown & MDX content support
+- Automatic sitemap generation
+- RSS feed support
+- Minimal and customizable styling
+- Ideal for corporate and institutional websites
 
-All commands are run from the root of the project, from a terminal:
+--------------------------------------------------
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+PROJECT STRUCTURE
 
-## 👀 Want to learn more?
+public/
+  Static assets (images, icons, etc.)
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+src/
+  components/
+    Reusable UI components
+  content/
+    Markdown and MDX content collections
+  layouts/
+    Page layouts
+  pages/
+    Website pages and routes
 
-## Credit
+astro.config.mjs
+package.json
+tsconfig.json
+README.md
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Pages are automatically generated from .astro or .md files located in src/pages/.
+Static assets are served from the public/ directory.
+
+--------------------------------------------------
+
+AVAILABLE COMMANDS
+
+All commands should be run from the project root directory.
+
+npm install
+  Install project dependencies
+
+npm run dev
+  Start local development server at http://localhost:4321
+
+npm run build
+  Build the production-ready website into the dist/ directory
+
+npm run preview
+  Preview the production build locally
+
+npm run astro ...
+  Run Astro CLI commands
+
+--------------------------------------------------
+
+DEPLOYMENT
+
+This project can be deployed on any static hosting platform, including:
+- Vercel
+- Netlify
+- Cloudflare Pages
+
+--------------------------------------------------
+
+CREDITS
+
+This project is based on the Astro Starter Kit: Blog,
+inspired by the Bear Blog theme:
+https://github.com/HermanMartinus/bearblog/
+
+--------------------------------------------------
+
+AUTHOR
+
+Website developed as part of a professional portfolio project.
