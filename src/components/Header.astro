@@ -3,101 +3,104 @@ import HamburgerMenu from "./HamburgerMenu";
 ---
 
 <header>
-	<nav class="flex flex-row items-center justify-between px-10 py-4">
-		<img 
-		src="src/assets/title.png" 
-		alt="condumix"
-		style="height: 46px; width: auto;"
-		>
-		<div>
-			<a href="#inicio">Início</a>
-			<a href="#historia">Nossa História</a>
-			<a href="#produtos">Produtos</a>
-			<a href="#diferenciais">Diferenciais</a>
-			<a href="#entregas">Entregas</a>
-		</div>	  
+  <nav class="flex flex-row items-center justify-between px-10 py-4">
+    <img
+      src="src/assets/title.png"
+      alt="condumix"
+      style="height: 46px; width: auto;"
+    />
+    <div>
+      <a href="#inicio">Início</a>
+      <a href="#historia">Nossa História</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#entregas">Entregas</a>
+    </div>
 
-		<menu>
-			<HamburgerMenu client:load />
-		  </menu>
-	</nav>
+    <menu>
+      <HamburgerMenu client:load />
+    </menu>
+  </nav>
 </header>
 
 <style>
-	body{
-		line-height: 1
-	}
-	div {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 35px;
-	}
-	header {
-		margin: 0;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	a {
-	font-family: 'Cabin', sans-serif;
-	font-size: 16px;
-	color: #0A2540;
-	text-decoration: none;
-	cursor: pointer;
-	}
+  body {
+    line-height: 1;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+  }
+  header {
+    margin: 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+  }
+  a {
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    color: #0a2540;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-	a:hover {
-		color: #FED700;
-	}
+  a:hover {
+    color: #fed700;
+  }
 
-	menu{
-		display: none;
-	}
-	@media (max-width: 720px) {
-		div {
-			display: none;
-		}
-		menu {
-			display: flex;
-			margin: 0;
-		}
-	}
+  menu {
+    display: none;
+  }
+  @media (max-width: 720px) {
+    div {
+      display: none;
+    }
+    menu {
+      display: flex;
+      margin: 0;
+    }
+  }
 </style>
 
 <script>
-	document.querySelectorAll('a[href^="#"]').forEach(link => {
-	  link.addEventListener('click', function (e) {
-		e.preventDefault();
-  
-		const targetId = this.getAttribute('href');
-		const targetElement = document.querySelector(targetId);
-  
-		const targetPosition = targetElement.offsetTop;
-		const startPosition = window.pageYOffset;
-		const distance = targetPosition - startPosition;
-  
-		const duration = 1200; 
-		let start: number | null = null;
-  
-		function animation(currentTime: number) {
-		  if (start === null) start = currentTime;
-		  const timeElapsed = currentTime - start;
-		  const run = ease(timeElapsed, startPosition, distance, duration);
-  
-		  window.scrollTo(0, run);
-  
-		  if (timeElapsed < duration) requestAnimationFrame(animation);
-		}
-  
-		function ease(t: number, b: number, c: number, d: number) {
-		  t /= d / 2;
-		  if (t < 1) return c / 2 * t * t + b;
-		  t--;
-		  return -c / 2 * (t * (t - 2) - 1) + b;
-		}
-  
-		requestAnimationFrame(animation);
-	  });
-	});
-  </script>
-  
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const target = e.currentTarget as HTMLAnchorElement;
+      const targetId = target.getAttribute("href");
+      if (!targetId) return;
+
+      const targetElement = document.querySelector(targetId);
+      if (!(targetElement instanceof HTMLElement)) return;
+
+      const targetPosition = targetElement.offsetTop;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+
+      const duration = 1200;
+      let start: number | null = null;
+
+      function animation(currentTime: number) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+
+        window.scrollTo(0, run);
+
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function ease(t: number, b: number, c: number, d: number) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    });
+  });
+</script>

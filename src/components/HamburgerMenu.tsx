@@ -1,9 +1,9 @@
-import * as React from 'react';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MenuIcon from '@mui/icons-material/Menu';
-import type { JSX } from 'react';
+import * as React from "react";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MenuIcon from "@mui/icons-material/Menu";
+import type { JSX } from "react";
 
 export default function HamburgerMenu(): JSX.Element {
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
@@ -23,23 +23,22 @@ export default function HamburgerMenu(): JSX.Element {
         <MenuIcon />
       </IconButton>
 
-      <Menu
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-      >
-        <MenuItem  onClick={handleClose}>
-        <a href="#inicio">Início</a>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+        <MenuItem onClick={handleClose}>
+          <a href="#inicio">Início</a>
         </MenuItem>
-        <MenuItem  onClick={handleClose}>
-        <a href="#historia">Nossa História</a>
+        <MenuItem onClick={handleClose}>
+          <a href="#historia">Nossa História</a>
         </MenuItem>
         <MenuItem href="#produtos" onClick={handleClose}>
-        <a href="#produtos">Produtos</a></MenuItem>
+          <a href="#produtos">Produtos</a>
+        </MenuItem>
         <MenuItem onClick={handleClose}>
-        <a href="#diferenciais">Diferenciais</a></MenuItem>
+          <a href="#diferenciais">Diferenciais</a>
+        </MenuItem>
         <MenuItem onClick={handleClose}>
-        <a href="#entregas"></a>Entregas</MenuItem>
+          <a href="#entregas"></a>Entregas
+        </MenuItem>
       </Menu>
     </>
   );
